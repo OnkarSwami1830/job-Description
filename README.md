@@ -1,6 +1,3 @@
-<<<<<<< HEAD
-# job-Description
-=======
 # JD Skill Extractor
 
 A dependency-free Python pipeline that reads `job_title_des.csv` and extracts a normalized role, experience, education, and categorized skills for every row.
@@ -58,4 +55,7 @@ python -m unittest discover -s tests -v
 
 ## Project layout
 
->>>>>>> f59530e (Initial commit - AI JD Analyzer)
+- `backend/app.py`: FastAPI API, MongoDB auth/jobs, and Gemini integrations
+- `src/extractors.py`: role, skill, experience, and education extraction
+- `frontend/src/main.jsx`: React dashboard and authentication UI
+- `data/skill_taxonomy.json`: editable skill categories and terms
