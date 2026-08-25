@@ -1,0 +1,11 @@
+__pycache__/
+*.py[cod]
+.venv/
+.env
+.env.*
+!.env.example
+frontend/node_modules/
+frontend/dist/
+output/*.csv
+uploads/
+job-analysis.json

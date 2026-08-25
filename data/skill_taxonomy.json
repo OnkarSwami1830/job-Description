@@ -1,0 +1,10 @@
+{
+  "Programming": ["Python", "JavaScript", "TypeScript", "Java", "C++", "C#", "PHP", "Ruby", "Go", "Kotlin", "Swift", "R"],
+  "Database": ["SQL", "MySQL", "PostgreSQL", "MongoDB", "Oracle", "Redis", "SQLite", "DynamoDB", "Cassandra"],
+  "Framework": ["Spring Boot", "React", "Angular", "Vue.js", "Django", "Flask", "FastAPI", "Node.js", ".NET", "Laravel", "Flutter", "TensorFlow", "PyTorch", "Hibernate", "Redux"],
+  "Cloud & DevOps": ["AWS", "Azure", "GCP", "Docker", "Kubernetes", "Git", "Jenkins", "Linux", "Terraform", "CI/CD"],
+  "Data & AI": ["Pandas", "NumPy", "Scikit-learn", "Machine Learning", "Deep Learning", "NLP", "Spark", "Hadoop", "Tableau", "Power BI", "LLM", "Hugging Face", "Statistics", "Excel"],
+  "Web & Testing": ["REST API", "HTML", "CSS", "JavaScript", "TypeScript", "Figma", "Selenium", "TestNG", "Automation", "API Testing"],
+  "Other": ["Networking"],
+  "Soft Skills": ["Communication", "Teamwork", "Leadership", "Problem Solving", "Attention to Detail", "Time Management"]
+}
