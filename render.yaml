@@ -9,5 +9,9 @@ services:
     envVars:
       - key: CORS_ORIGINS
         sync: false
-      - key: DATABASE_URL
+      - key: MONGODB_URI
+        sync: false
+      - key: MONGODB_DATABASE
+        value: talentlens
+      - key: TOKEN_SECRET
         sync: false

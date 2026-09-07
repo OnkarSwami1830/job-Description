@@ -23,8 +23,12 @@ python -m src.app --input job_title_des.csv --output output/extracted_jobs.csv -
 Start the backend from this folder:
 
 ```powershell
+$env:MONGODB_URI = "mongodb://127.0.0.1:27017"
+$env:MONGODB_DATABASE = "talentlens"
 python -m uvicorn backend.app:app --reload --port 8000
 ```
+
+MongoDB is required for login, registration, and saved jobs. Set `MONGODB_URI` to a MongoDB Atlas connection string when using a hosted database. The frontend opens on a login screen; create an account, then analyze and save jobs in the authenticated workspace.
 
 Start the React dashboard in a second terminal:
 
@@ -41,11 +45,11 @@ Open `http://127.0.0.1:5173/`. The dashboard sends pasted descriptions to `POST 
 The repository includes `render.yaml`, `frontend/vercel.json`, and environment templates. Push the project to GitHub, then:
 
 1. In Render, create a Blueprint from the repository. The blueprint uses `pip install -r requirements.txt` and starts `uvicorn backend.app:app --host 0.0.0.0 --port $PORT`.
-2. Create a Neon PostgreSQL project and run `database/schema.sql`. Add its connection string to Render as `DATABASE_URL`.
+2. Create a MongoDB Atlas database and add its connection string to Render as `MONGODB_URI`. Set `MONGODB_DATABASE` to `talentlens` and provide a strong `TOKEN_SECRET`.
 3. Deploy `frontend` as a Vercel project with Root Directory `frontend`, Framework `Vite`, and `VITE_API_URL` set to the Render service URL.
 4. Set Render `CORS_ORIGINS` to the Vercel URL. Multiple origins may be comma-separated.
 
-The current `/jobs` endpoints are intentionally in-memory until the database repository is connected, so data is lost when the free Render service restarts. Do not commit `.env` files or API keys.
+The `/jobs` endpoints persist authenticated jobs in MongoDB. Do not commit `.env` files or API keys.
 
 ## Test
 
