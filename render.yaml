@@ -15,3 +15,14 @@ services:
         value: talentlens
       - key: TOKEN_SECRET
         sync: false
+      - key: GEMINI_API_KEY
+        sync: false
+
+  - type: static
+    name: ai-jd-analyzer-frontend
+    buildCommand: npm install && npm run build
+    staticPublishPath: frontend/dist
+    rootDir: frontend
+    envVars:
+      - key: VITE_API_URL
+        sync: false
