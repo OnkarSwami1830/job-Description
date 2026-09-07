@@ -1,0 +1,9 @@
+{
+  "name": "ai-jd-analyzer-workspace",
+  "private": true,
+  "version": "1.0.0",
+  "scripts": {
+    "build": "node build.mjs",
+    "dev": "npm --prefix frontend run dev"
+  }
+}

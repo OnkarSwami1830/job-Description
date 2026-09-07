@@ -46,7 +46,7 @@ The repository includes `render.yaml`, `frontend/vercel.json`, and environment t
 
 1. In Render, create a Blueprint from the repository. The blueprint uses `pip install -r requirements.txt` and starts `uvicorn backend.app:app --host 0.0.0.0 --port $PORT`.
 2. Create a MongoDB Atlas database and add its connection string to Render as `MONGODB_URI`. Set `MONGODB_DATABASE` to `talentlens` and provide a strong `TOKEN_SECRET`.
-3. The Blueprint also defines the frontend as a Render static site. It uses `frontend` as its root directory, runs `npm install && npm run build`, and publishes `dist`. Set `VITE_API_URL` to the backend service URL.
+3. The Blueprint also defines the frontend as a Render static site. It uses `frontend` as its root directory, runs `npm install && npm run build`, and publishes `dist`. The repository root also includes a compatibility `package.json` and build script for existing Render services still configured at the repository root. Set `VITE_API_URL` to the backend service URL.
 4. Set Render `CORS_ORIGINS` to the frontend URL. Multiple origins may be comma-separated. Alternatively, deploy `frontend` on Vercel with Root Directory `frontend` and the same `VITE_API_URL` setting.
 
 The `/jobs` endpoints persist authenticated jobs in MongoDB. Do not commit `.env` files or API keys.
